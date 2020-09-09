@@ -1,9 +1,12 @@
-var tictactoe = ["Rock", "Paper", "Scissor"];
+var arrOptions = ["Rock", "Paper", "Scissor"];
 function getId(par) { return document.getElementById(par); }
-function inner(par) { return getId(par).innerHTML; }
 function listenPar(par, par2, par3) { return getId(par).addEventListener(par2, par3); }
-tictactoe.forEach(function (ttt, i) {
-    listenPar(tictactoe[i], "click", function () {
+function inner(par, par4) { return (getId(par).innerHTML = par4); }
+function youWin() { inner("choice", "You Win !"); }
+function youDraw() { (inner("choice", "It's a draw")); }
+function youLose() { inner("choice", "You Lose..."); }
+arrOptions.forEach(function (option, i) {
+    listenPar(arrOptions[i], "click", function () {
         var playerValue = i;
         var opponentValue = (Math.floor(Math.random() * 3));
         switch (playerValue) {
@@ -49,6 +52,3 @@ tictactoe.forEach(function (ttt, i) {
         }
     });
 });
-function youWin() { getId("choice").innerHTML = "You Win !"; }
-function youDraw() { getId("choice").innerHTML = "It's a draw, try again!"; }
-function youLose() { getId("choice").innerHTML = "You Lose..."; }

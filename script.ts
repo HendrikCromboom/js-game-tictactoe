@@ -1,9 +1,12 @@
-const tictactoe: string[] = ["Rock", "Paper", "Scissor"]
+const arrOptions: string[] = ["Rock", "Paper", "Scissor"]
 function getId(par:string){ return document.getElementById(par)}
-function inner(par:string){ return getId(par).innerHTML}
 function listenPar(par:string,par2:string,par3:any){ return getId(par).addEventListener(par2, par3)}
-tictactoe.forEach((ttt, i)=>{
-    listenPar(tictactoe[i], "click", ()=>{
+function inner(par:string, par4:string){ return (getId(par).innerHTML= par4) }
+function youWin() {inner("choice", "You Win !")}
+function youDraw() {(inner("choice", "It's a draw"))}
+function youLose() {inner("choice", "You Lose...")}
+arrOptions.forEach((option:string, i:number)=>{
+    listenPar(arrOptions[i], "click", ()=>{
         let playerValue = i
         let opponentValue = (Math.floor(Math.random() * 3))
         switch (playerValue){
@@ -26,11 +29,7 @@ tictactoe.forEach((ttt, i)=>{
                     case(2):youDraw();break;
                 }break;
         }
+    })
 })
-}
- )
 
 
-function youWin() {getId("choice").innerHTML = "You Win !"}
-function youDraw() {getId("choice").innerHTML = "It's a draw, try again!"}
-function youLose() {getId("choice").innerHTML = "You Lose..."}
