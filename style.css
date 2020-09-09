@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+    color: white;
+}
+.outer-container{
+    display: flex;
+
+}
+.containers{
+    border: red 1px solid;
+    padding: 5%;
+}
