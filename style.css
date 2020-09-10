@@ -5,12 +5,13 @@ body{
 .outer-container{
     display: flex;
     flex-direction: row;
-
+    width: 100%;
 }
 .containers{
     border: red 1px solid;
     padding: 5%;
     flex-direction: row;
+    width: 100%;
 }
 .you{
 
