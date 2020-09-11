@@ -1,5 +1,6 @@
 body{
-    background-color: black;
+    background: rgb(105,41,41);
+    background: radial-gradient(circle, rgba(105,41,41,1) 0%, rgba(0,0,0,1) 100%);
     color: white;
 }
 .outer-container{
@@ -29,3 +30,7 @@ body{
     cursor: pointer;
     margin: 5%;
 }
+#choice{
+
+    background: rgb(105,41,41);
+    background: radial-gradient(circle, rgba(105,41,41,1) 0%, rgba(0,0,0,1) 100%);}

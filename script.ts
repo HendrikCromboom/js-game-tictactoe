@@ -1,11 +1,13 @@
 const arrOptions: string[] = ["Rock", "Paper", "Scissor", "Spock", "Lizard"]
 const oppOptions: string[] = ["oppRock", "oppPaper", "oppScissor", "oppSpock", "oppLizard"]
+let yourScore:number = 0
+let oppoScore:number = 0
 function getId(par:string){ return document.getElementById(par)}
 function listenPar(par:string,par2:string,par3:any){ return getId(par).addEventListener(par2, par3)}
 function inner(par:string, par4:string){ return (getId(par).innerHTML= par4) }
-function youWin() {inner("choice", "You Win !");}
+function youWin() {inner("choice", "You Win !");yourScore ++;inner("youScore", "Score: " + yourScore )}
 function youDraw() {(inner("choice", "It's a draw"))}
-function youLose() {inner("choice", "You Lose...")}
+function youLose() {inner("choice", "You Lose..."); oppoScore++; inner("oppScore", "Score: " + oppoScore)}
 arrOptions.forEach((option:string, i:number)=>{
     listenPar(arrOptions[i], "click", ()=>{
         for(var b = 0; b < oppOptions.length; b++ ){getId(oppOptions[b]).style.borderColor = "white";getId(arrOptions[b]).style.borderColor = "white";}
